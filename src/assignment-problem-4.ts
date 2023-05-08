@@ -13,7 +13,11 @@ Create a TypeScript class called Student that extends the Person class and has a
 // }
 
 // class Student extends Person {
-// 	constructor(name: string, age: number, private grade: string) {
+// 	constructor(
+// 		public name: string,
+// 		public age: number,
+// 		private grade: string
+// 	) {
 // 		super(name, age);
 // 	}
 
