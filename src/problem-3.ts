@@ -4,18 +4,29 @@
 Write a TypeScript generic function that takes this array, a criterion , and returns a new array containing only the products that match the given criterion and value. Use a generic type parameter in the function signature to ensure type safety.
  */
 
-// interface IProduct {
-// 	id: number;
-// 	name: string;
-// 	price: number;
-// 	category: string;
-// }
+interface IProduct {
+	id: number;
+	name: string;
+	price: number;
+	category: string;
+}
 
-// const filterProducts = <T extends IProduct, Y extends keyof T>(
+// const filterProducts = <T extends IProduct>(
 // 	products: Array<T>,
-// 	targetField: Y,
+// 	targetField: keyof T,
 // 	criteria: string
 // ): Array<T> => {
+// 	const filtered = products.filter(
+// 		(product: T) => product[targetField] === criteria
+// 	);
+// 	return filtered;
+// };
+
+// const filterProducts = <T extends IProduct>(
+// 	products: Array<T>,
+// 	targetField: keyof T,
+// 	criteria: T[keyof T]
+// ) => {
 // 	const filtered = products.filter(
 // 		(product: T) => product[targetField] === criteria
 // 	);
@@ -31,4 +42,4 @@ Write a TypeScript generic function that takes this array, a criterion , and ret
 // 	{ id: 6, name: 'Pizza', price: 480, category: 'Fast-Foods' },
 // ];
 
-// console.log(filterProducts(products, 'category', 'Fruits'));
+// console.log(filterProducts(products, 'price', 450));
